@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {ManageCustomerComponent} from './Components/customer/manage-customer/manage-customer.component';
+import {ManageItemComponent} from './Components/item/manage-item/manage-item.component';
+import {ManagePaceorderFormComponent} from './Components/placeorder/manage-paceorder-form/manage-paceorder-form.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'customer',
-  //   loadChildren: './customer/customer.module#CustomerModule'
-  // },
+  {
+    path: 'customer',
+    loadChildren: './Components/customer/customer.module#CustomerModule'
+  },
 
-  // {
-  //   path: 'item',
-  //   loadChildren: './item/item.module#ItemModule'
-  // },
-  //
-  // {
-  //   path: 'placeorder',
-  //   loadChildren: './placeorder/placeorder.module#PlaceorderModule'
-  // },
-  //
-  // {
-  //   path: '',
-  //   redirectTo: '',
-  //   pathMatch: 'full'
-  //
-  // }
+  {
+    path: 'item',
+   loadChildren: './Components/item/item.module#ItemModule'
+  },
+
+  {
+    path: 'placeorder',
+ loadChildren: './Components/placeorder/placeorder.module#PlaceorderModule'
+  },
+
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+
+  }
 
 ];
 
