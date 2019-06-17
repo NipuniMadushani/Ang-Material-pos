@@ -1,4 +1,4 @@
 export class Customer {
-  constructor(private id?: string, private name?: string, private address?: string) {
+  constructor(public id?: string, public name?: string, public address?: string) {
   }
 }

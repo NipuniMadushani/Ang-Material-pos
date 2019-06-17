@@ -8,7 +8,7 @@
   </mat-toolbar>
 </div>
 
-<form [formGroup]="" class="normal-form">
+
 
 <!--  devide two part-->
   <mat-grid-list cols="2" rowHeight="500px">
@@ -22,24 +22,25 @@
 
         <mat-card-content >
           <mat-card >
+            <form #customerForm='ngForm'>
             <div class="controles-container">
                       <mat-form-field>
-                      <input  formControlName="$key" matInput placeholder="id">
+                      <input  matInput placeholder="Customer id" type="text" id="id" name="id" [(ngModel)]="customer.id">
                       </mat-form-field>
                       <mat-form-field>
-                        <input   formControlName="name" matInput placeholder="name">
+                        <input  matInput placeholder="Customer name" type="text" id="name" name="name" [(ngModel)]="customer.name">
                       </mat-form-field>
                       <mat-form-field>
-                        <input type="text" formControlName="address" matInput placeholder="address">
+                        <input  matInput placeholder="Customer address" type="text" id="address" name="address" [(ngModel)]="customer.address">
                       </mat-form-field>
 
                     </div>
 
 
-              <button type="submit" mat-raised-button color="primary">Customer Add</button>&nbsp;
+              <button type="submit" mat-raised-button color="primary" (click)="saveCustomer()">Customer Add</button>&nbsp;
               <button type="submit"  mat-raised-button style="background-color: #8E24AA">Customer Edit</button>&nbsp;
 <!--              <button type="submit"  mat-raised-button color="warn">Customer Delete</button>-->
-
+            </form>
           </mat-card>
 
         </mat-card-content>
@@ -69,5 +70,5 @@
     </mat-grid-tile>
 
   </mat-grid-list>
-</form>
+
 

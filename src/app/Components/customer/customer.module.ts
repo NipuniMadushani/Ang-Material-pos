@@ -6,7 +6,7 @@ import { ManageCustomerComponent } from './manage-customer/manage-customer.compo
 import {MatTabsModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {CustomerService} from '../../service/customer.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material/material.module';
 
 @NgModule({
@@ -17,7 +17,8 @@ import {MaterialModule} from '../../material/material.module';
     MatTabsModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
 
   providers: [

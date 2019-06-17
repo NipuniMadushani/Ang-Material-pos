@@ -16,7 +16,9 @@ export class ManageCustomerComponent implements OnInit {
 //   manually = false;
 //   cust: Customer = null;
 
-  customers: Customer[] = [];
+  customer: Customer = new Customer();
+
+  @ViewChild('customerForm', {static: true}) customerForm: NgForm;
   constructor(private service: CustomerService) { }
 
   ngOnInit() {
@@ -24,9 +26,21 @@ export class ManageCustomerComponent implements OnInit {
   }
 
   private allCustomer() {
-    this.service.getAllCustomers().subscribe(customers => {
-      this.customers = customers;
+    this.service.getAllCustomers().subscribe(customer => {
     });
   }
+
+  saveCustomer(): void {
+    alert('hello');
+    this.service.saveCustomer(this.customer).subscribe(
+      (result) => {
+        console.log(this.customer);
+        console.log(this.customerForm);
+        alert('Customer Added Successfully ');
+        this.allCustomer();
+      }
+    );
+  }
+
 }
 

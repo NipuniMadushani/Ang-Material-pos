@@ -5,9 +5,9 @@ import {Observable} from 'rxjs';
 import {Customer} from '../dto/customer';
 
 
-export  const MAIN_URL = 'http://localhost:8080';
+export  const MAIN_URL = 'http://localhost:8081/';
 
-const URL = '/api/v1/customers';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +16,11 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getAllCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>('http://localhost:8080/auth/customers');
+    return this.http.get<Customer[]>('http://localhost:8081/jkl/customers');
+  }
+
+  saveCustomer(customer: Customer): Observable<boolean> {
+    return this.http.post<boolean>('http://localhost:8081/jkl/customers', customer);
+
   }
 }
