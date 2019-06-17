@@ -1,3 +1,78 @@
-<p>
-  manage-item works!
-</p>
+
+
+<div  class="container">
+  <mat-toolbar style="background-color: #E1BEE7">
+    <span class="fill-remaining-space"></span>
+    <span>Item Form</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+</div>
+
+<form [formGroup]="" class="normal-form">
+
+  <!--  devide two part-->
+  <mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile>
+      <mat-card class="main-card" >
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Item Form</h3>
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content >
+          <mat-card >
+            <div class="controles-container">
+              <mat-form-field>
+                <input  formControlName="$key" matInput placeholder="code">
+              </mat-form-field>
+              <mat-form-field>
+                <input   formControlName="description" matInput placeholder="description">
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" formControlName="unit price" matInput placeholder="unit price">
+              </mat-form-field>
+
+              <mat-form-field>
+                <input type="text" formControlName="qty on hand" matInput placeholder="qty on hand ">
+              </mat-form-field>
+            </div>
+
+
+            <button type="submit" mat-raised-button color="primary">Customer Add</button>&nbsp;
+            <button type="submit"  mat-raised-button style="background-color: #8E24AA">Customer Edit</button>&nbsp;
+            <!--              <button type="submit"  mat-raised-button color="warn">Customer Delete</button>-->
+
+          </mat-card>
+
+        </mat-card-content>
+
+      </mat-card>
+
+    </mat-grid-tile>
+
+
+
+    <mat-grid-tile>
+      <div class="cust-table">
+        <table id="customers">
+          <tr>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Unit Price</th>
+            <th>Qty On Hand</th>
+          </tr>
+          <tr >
+
+
+          </tr>
+
+        </table>
+
+
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</form>
+

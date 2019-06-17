@@ -1,22 +1,64 @@
 <mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav" >
+  <mat-drawer #drawer class="sidenav" style="margin-top: 65px ;background-color:#D1C4E9" >
 
-    <button color="primary" mat-button routerLink="/customer" class="mat-button">Customers</button>
-    <button  mat-button color="primary" routerLink="/item" class="mat-button">Items</button>
-    <button mat-button color="primary" routerLink="/placeorder" class="mat-button">PlaceOrder Form</button>
+<!--    <button  mat-button color="#00BFA5" mat-button routerLink="/customer" class="mat-button">Customers</button>-->
+<!--    <button  mat-button color="#00BFA5" routerLink="/item" class="mat-button">Items</button>-->
+<!--    <button mat-button color="warn" routerLink="/placeorder" class="mat-button">PlaceOrder Form</button>-->
 
+    <button mat-button [matMenuTriggerFor]="animals">Thogakade</button>
+
+    <mat-menu #animals="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="vertebrates" >Customer</button>
+      <button mat-menu-item [matMenuTriggerFor]="invertebrates"  >Item</button>
+      <button mat-menu-item [matMenuTriggerFor]="placeorder" >PlaceOrder Form</button>
+    </mat-menu>
+
+    <mat-menu #vertebrates="matMenu">
+      <button mat-menu-item routerLink="/customer">Manage Customer</button>
+<!--      <button mat-menu-item [matMenuTriggerFor]="amphibians">Manage Item</button>-->
+<!--      <button mat-menu-item [matMenuTriggerFor]="reptiles">Manage PlaceOrder Form</button>-->
+
+    </mat-menu>
+
+    <mat-menu #invertebrates="matMenu">
+      <button mat-menu-item routerLink="/item">Manage Item</button>
+    </mat-menu>
+
+    <mat-menu #placeorder="matMenu">
+      <button mat-menu-item routerLink="/placeorder">Manage PlaceOrder</button>
+    </mat-menu>
   </mat-drawer>
 
 
   <div class="sidenav-content">
-    <mat-toolbar color="primary">
+    <mat-toolbar  style="background-color:#8E24AA">
       <mat-toolbar-row>
         <button mat-icon-button (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
-        <span>POS SYSTEM</span>
+        <span style="color: aliceblue">POS SYSTEM</span>
         <span class="spacer"></span>
         <mat-icon>favorite</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu>
+          <button mat-menu-item >
+            <mat-icon>publish</mat-icon>
+            <span>Share</span>
+          </button>
+
+          <button mat-menu-item disabled>
+            <mat-icon>mode_comment</mat-icon>
+            <span>Comment</span>
+          </button>
+
+          <button mat-menu-item>
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
       </mat-toolbar-row>
     </mat-toolbar>
 

@@ -6,6 +6,11 @@ import {ManagePaceorderFormComponent} from './Components/placeorder/manage-paceo
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: './Components/homepage/homepage.module#HomepageModule'
+  },
+
+  {
     path: 'customer',
     loadChildren: './Components/customer/customer.module#CustomerModule'
   },

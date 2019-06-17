@@ -9,10 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material';
+import {MatMenuModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 
+import {MaterialModule} from './material/material.module';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {HomepageModule} from './Components/homepage/homepage.module';
+
 
 
 
@@ -25,10 +30,16 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatToolbarModule
+    MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HomepageModule,
+    // MatButtonModule,
+    // MatIconModule,
+    // MatSidenavModule,
+    // MatToolbarModule,
+    // MatMenuModule,
+    // MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

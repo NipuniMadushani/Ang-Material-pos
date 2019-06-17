@@ -1,3 +1,73 @@
-<p>
-  manage-customer works!
-</p>
+
+
+<div  class="container">
+  <mat-toolbar style="background-color: #E1BEE7">
+    <span class="fill-remaining-space"></span>
+    <span>Customer Form</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+</div>
+
+<form [formGroup]="" class="normal-form">
+
+<!--  devide two part-->
+  <mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile>
+      <mat-card class="main-card" >
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Customer Form</h3>
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content >
+          <mat-card >
+            <div class="controles-container">
+                      <mat-form-field>
+                      <input  formControlName="$key" matInput placeholder="id">
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input   formControlName="name" matInput placeholder="name">
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input type="text" formControlName="address" matInput placeholder="address">
+                      </mat-form-field>
+
+                    </div>
+
+
+              <button type="submit" mat-raised-button color="primary">Customer Add</button>&nbsp;
+              <button type="submit"  mat-raised-button style="background-color: #8E24AA">Customer Edit</button>&nbsp;
+<!--              <button type="submit"  mat-raised-button color="warn">Customer Delete</button>-->
+
+          </mat-card>
+
+        </mat-card-content>
+
+      </mat-card>
+
+    </mat-grid-tile>
+
+
+
+    <mat-grid-tile>
+      <div class="cust-table">
+        <table id="customers">
+          <tr>
+            <th>Cutomer ID</th>
+            <th>Cutomer Name</th>
+            <th>Customer Address</th>
+          </tr>
+          <tr>
+
+          </tr>
+
+        </table>
+
+
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</form>
+
