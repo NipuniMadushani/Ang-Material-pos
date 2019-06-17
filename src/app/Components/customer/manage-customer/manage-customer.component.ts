@@ -17,17 +17,21 @@ export class ManageCustomerComponent implements OnInit {
 //   cust: Customer = null;
 
   customer: Customer = new Customer();
-
+  customerList: Array<Customer> = [];
+  manually = false;
+  cust: Customer = null;
   @ViewChild('customerForm', {static: true}) customerForm: NgForm;
-  constructor(private service: CustomerService) { }
+
+  constructor(private service: CustomerService) {
+  }
 
   ngOnInit() {
     this.allCustomer();
   }
 
   private allCustomer() {
-    this.service.getAllCustomers().subscribe(customer => {
-    });
+    this.service.getAllCustomers().subscribe(value =>
+      this.customerList = value);
   }
 
   saveCustomer(): void {
@@ -42,5 +46,24 @@ export class ManageCustomerComponent implements OnInit {
     );
   }
 
-}
+  selectCustomer(customer: Customer): void {
+    this.customer = customer;
+    this.cust = Object.assign({}, customer);
+    this.manually = true;
 
+  }
+
+  deleteCustomer(id): void {
+    if (confirm('Are you want to delete this customer?')) {
+      console.log(id);
+      this.service.deleteCustomer(id).subscribe(
+        (result) => {
+          alert('Customer Delete');
+          this.allCustomer();
+        }
+      );
+
+    }
+  }
+
+}

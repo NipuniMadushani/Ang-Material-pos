@@ -15,12 +15,17 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>('http://localhost:8081/jkl/customers');
+  getAllCustomers(): Observable<Array<Customer>> {
+    return this.http.get<Array<Customer>>('http://localhost:8081/jkl/customers');
   }
 
   saveCustomer(customer: Customer): Observable<boolean> {
     return this.http.post<boolean>('http://localhost:8081/jkl/customers', customer);
 
+  }
+
+  deleteCustomer(id: number): Observable<boolean> {
+    console.log('Hello');
+    return this.http.delete<boolean>('http://localhost:8081/jkl/customers' + '?'  + '='  + id);
   }
 }

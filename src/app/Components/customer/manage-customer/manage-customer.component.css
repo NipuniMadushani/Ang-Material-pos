@@ -8,3 +8,33 @@ div.container{
   width: 100%;
   padding: 5%;
 }
+#customers {
+  margin-top: -200px;
+  font-family: "Trebuchet MS", Arial, Helvetica, bold, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  position:absolute;
+  left: 0;
+
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 10px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #7e3bd0;
+  color: white;
+}
+.image{
+  background: url("~src/assets/43563a1c6a3de8b.jpg");
+}
